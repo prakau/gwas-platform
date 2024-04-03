@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GWAS Platform</title>
+    <!-- Include necessary CSS and JavaScript files -->
+</head>
+<body>
+    <h1>Genome-Wide Association Study Platform</h1>
+    
+    <!-- File upload form -->
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <h2>Upload Data</h2>
+        <label for="genotype_file">Genotype File:</label>
+        <input type="file" name="genotype_file" required>
+        <br>
+        <label for="phenotype_file">Phenotype File:</label>
+        <input type="file" name="phenotype_file" required>
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+    
+    <!-- GWAS analysis form -->
+    <form action="/analysis" method="POST">
+        <h2>GWAS Analysis</h2>
+        <label for="trait">Select Trait:</label>
+        <select name="trait" required>
+            <!-- Populate options dynamically based on uploaded phenotype data -->
+        </select>
+        <br>
+        <label for="model">Select Model:</label>
+        <select name="model" required>
+            <option value="linear">Linear Regression</option>
+            <option value="mixed">Mixed Linear Model</option>
+        </select>
+        <br>
+        <input type="submit" value="Run Analysis">
+    </form>
+    
+    <!-- Results section -->
+    <div id="results">
+        <!-- Display GWAS results and interactive visualizations -->
+    </div>
+    
+    <!-- Download results button -->
+    <a href="/download" download>Download Results</a>
+</body>
+</html>
